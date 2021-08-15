@@ -6,11 +6,12 @@ import App from './App';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import challengeReducer from './reducers/challengeReducer'
 
 //gives access to dev tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(r, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(challengeReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>
