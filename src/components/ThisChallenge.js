@@ -1,4 +1,5 @@
 import React from 'react';
+import Submissions from './Submissions.js'
 // import '../header.css';
 // import '../App.css'
 
@@ -13,6 +14,7 @@ class ThisChallenge extends React.Component {
         <button>Close Challenge</button>
         <div>
           <h3>Submissions</h3>
+          <Submissions />
         </div>
       </div>
     )
