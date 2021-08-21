@@ -8,17 +8,20 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 10px;
+  height: 600px;
 }
 
 .left {
   border: 1px solid black;
   width: 65%;
+  overflow: scroll;
 
 }
 
 .allchallenges {
   border: 1px solid black;
   width: 33%;
+  overflow: scroll
 }
 
 .challengeButtons {
