@@ -2,6 +2,7 @@
 import React from 'react';
 // import {connect} from 'react-redux';
 import Header from './components/Header'
+import AllChallenges from './components/AllChallenges'
 
 class App extends React.Component {
 
@@ -16,7 +17,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <div className="head"><Header /></div>
+        <div className="page">
+          <div className="left"><AllChallenges /></div>
+          <div className="allchallenges"><AllChallenges /></div>
+        </div>
       </div>
     );
   }
