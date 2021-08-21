@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React from 'react';
 // import {connect} from 'react-redux';
-import Header from './comoponents/Header'
+import Header from './components/Header'
 
 class App extends React.Component {
 
