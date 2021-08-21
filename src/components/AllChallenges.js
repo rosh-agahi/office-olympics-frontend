@@ -6,7 +6,15 @@ class AllChallenges extends React.Component {
 
   render() {
     return (
-      <h2>All Challenges!</h2>
+      <div>
+        <h2>All Challenges!</h2>
+
+        <ul>
+          <li>Challenge Name</li>
+          <li>Challenge Name</li>
+          <li>Challenge Name</li>
+        </ul>
+      </div>
     )
   }
 
