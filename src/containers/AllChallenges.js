@@ -1,27 +1,18 @@
 import React from 'react';
-import ChallengeListCard from '../components/ChallengeListCard.js'
+import {connect} from 'react-redux';
+import {fetchChallenges} from '../actions/fetchChallenges'
+import ChallengeListCard from '../components/ChallengeListCard'
 // import '../header.css';
 // import '../App.css'
 
 class AllChallenges extends React.Component {
 
-  constructor() {
-    super()
-    this.state = {
-      challenges: []
-    }
-  }
-
   componentDidMount() {
-    fetch('http://127.0.0.1:3000/api/v1/challenges', {
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(challenges => this.setState({challenges: challenges}))
+    this.props.fetchChallenges()
   }
 
   render() {
-    const challengeItems = this.state.challenges.map(challenge => <ChallengeListCard key={challenge.id} challenge={challenge}/>)
+    const challengeItems = this.props.challenges.map(challenge => <ChallengeListCard key={challenge.id} challenge={challenge}/>)
     return (
       <div>
         <h2>All Challenges</h2>
@@ -31,7 +22,13 @@ class AllChallenges extends React.Component {
       </div>
     )
   }
-
 }
 
-export default AllChallenges;
+const mapStateToProps = state => {
+  return {
+    challenges: state.challenges
+  }
+}
+// takes the state from the redux store and returns a challenges object
+
+export default connect(mapStateToProps, {fetchChallenges})(AllChallenges);
