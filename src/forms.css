@@ -2,6 +2,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 input {
@@ -10,8 +11,7 @@ input {
   border: none;
   border-bottom: 1px solid black;
   margin-bottom: 8px;
-  margin: 5px;
-  
+  width: 95%;
 }
 
 input[type=submit] {
@@ -22,6 +22,7 @@ input[type=submit] {
   border-radius: 25px;
   padding: 10px;
   height: 40px;
+  width: 130px;
 }
 
 input[type=submit]:active {

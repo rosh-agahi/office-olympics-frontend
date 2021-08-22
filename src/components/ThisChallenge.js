@@ -9,7 +9,6 @@ class ThisChallenge extends React.Component {
         <p>Description</p>
         <p>Rules of the Road</p>
         <div className="challengeButtons">
-          <button>Close Challenge</button>
           <button>New Submission</button>
         </div>
       </div>

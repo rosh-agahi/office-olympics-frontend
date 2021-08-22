@@ -4,13 +4,13 @@ import ChallengeListCard from '../components/ChallengeListCard'
 import {connect} from 'react-redux';
 
 
-const AllChallenges = (props) => {
+const AllChallenges = ({challenges}) => {
 
   return (
     <div>
       <h2>All Challenges</h2>
         <div>
-          { props.challenges.map(c => <ChallengeListCard key={c.id} challenge={c}/>) }
+          { challenges.map(c => <ChallengeListCard key={c.id} challenge={c}/>) }
         </div>
     </div>
   )

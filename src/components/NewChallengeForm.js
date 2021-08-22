@@ -62,7 +62,6 @@ class NewChallengeForm extends React.Component {
     }
 
     handleSubmit = (e) => {
-      e.preventDefault()
       const headers = {
         method: "POST",
         headers: {
