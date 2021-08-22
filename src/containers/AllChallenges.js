@@ -1,5 +1,5 @@
 import React from 'react';
-import ChallengeListCard from './ChallengeListCard.js'
+import ChallengeListCard from '../components/ChallengeListCard.js'
 // import '../header.css';
 // import '../App.css'
 

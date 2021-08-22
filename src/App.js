@@ -1,10 +1,11 @@
-// import logo from './logo.svg';
 import React from 'react';
-// import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import Header from './components/Header'
 import NewChallengeForm from './components/NewChallengeForm'
 import ThisChallenge from './components/ThisChallenge'
-import AllChallenges from './components/AllChallenges'
+import AllChallenges from './containers/AllChallenges'
+
+import {fetchChallenges} from './actions/fetchChallenges'
 
 class App extends React.Component {
 
@@ -21,6 +22,16 @@ class App extends React.Component {
   }
 }
 
-// export default connect(mapStateToProps)(App);
+const mapStateToProps = (state) => {
+  //way of accessing values in our store as props
+  return {
+    challenges: state.challenges
+  }
+}
+export default connect(
+  //mapStateToProps,
+  null,
+  {fetchChallenges})(App);
+// "connect" is how the redux store is connected to the fetch
 
-export default App
+//export default App
