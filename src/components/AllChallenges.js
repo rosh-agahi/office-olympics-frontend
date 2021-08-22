@@ -21,7 +21,7 @@ class AllChallenges extends React.Component {
   }
 
   render() {
-    const challengeItems = this.state.challenges.map(challenge => <ChallengeListCard challenge={challenge}/>)
+    const challengeItems = this.state.challenges.map(challenge => <ChallengeListCard key={challenge.id} challenge={challenge}/>)
     return (
       <div>
         <h2>All Challenges</h2>
