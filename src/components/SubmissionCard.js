@@ -6,7 +6,7 @@ class SubmissionCard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="submissioncard">
         <h2>Submission Card</h2>
         <p>Name, Submission photos....</p>
         <button className="vote">Vote</button>
