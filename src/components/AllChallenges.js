@@ -5,30 +5,31 @@ import ChallengeListCard from './ChallengeListCard.js'
 
 class AllChallenges extends React.Component {
 
+  constructor() {
+    super()
+    this.state = {
+      challenges: []
+    }
+  }
+
   componentDidMount() {
     fetch('http://127.0.0.1:3000/api/v1/challenges', {
       method: 'GET'
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(challenges => this.setState({challenges: challenges}))
   }
 
   render() {
     return (
       <div>
-        <h2>All Challenges!</h2>
+        <h2>All Challenges</h2>
           <ChallengeListCard />
           <ChallengeListCard />
       </div>
     )
   }
 
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     challenges: []
-  //   }
-  // }
 }
 
 export default AllChallenges;
