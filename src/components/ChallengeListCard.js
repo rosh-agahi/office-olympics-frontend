@@ -1,21 +1,13 @@
 import React from 'react';
 
-class ChallengeListCard extends React.Component {
+const ChallengeListCard = ({challenge}) => {
 
-  render() {
     return (
       <div className="challengelistitem">
-        <a href="www.google.com">Challenge Name</a>
+        <a href="www.google.com">{challenge.name}</a>
       </div>
     )
-  }
 
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     challenges: []
-  //   }
-  // }
 }
 
 export default ChallengeListCard;

@@ -21,11 +21,13 @@ class AllChallenges extends React.Component {
   }
 
   render() {
+    const challengeItems = this.state.challenges.map(challenge => <ChallengeListCard challenge={challenge}/>)
     return (
       <div>
         <h2>All Challenges</h2>
-          <ChallengeListCard />
-          <ChallengeListCard />
+          <div>
+            { challengeItems }
+          </div>
       </div>
     )
   }
