@@ -3,5 +3,13 @@
 // a reducer is a function
 
 export default function challengeReducer(state = {challenges: []}, action) {
-  return state
+  switch (action.type) {
+    case 'FETCH_CHALLENGES':
+      return {challenges: action.payload}
+    default:
+      return state
+  }
 }
+
+// this function returns an array of challenges.
+// return from fetch
