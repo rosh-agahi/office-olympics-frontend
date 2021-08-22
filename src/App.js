@@ -4,8 +4,15 @@ import NewChallengeForm from './components/NewChallengeForm'
 import FocusChallenge from './containers/FocusChallenge'
 import AllChallenges from './containers/AllChallenges'
 
+import {connect} from 'react-redux';
+import {fetchChallenges} from './actions/fetchChallenges'
+
 
 class App extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchChallenges()
+  }
 
   render() {
     return (
@@ -17,7 +24,7 @@ class App extends React.Component {
           </div>
           <div className="allchallenges">
             <div className="newchallengeform"><NewChallengeForm /></div>
-            <div><AllChallenges /></div>
+            <div><AllChallenges challenges={this.props.challenges} /></div>
           </div>
         </div>
       </div>
@@ -25,4 +32,11 @@ class App extends React.Component {
   }
 }
 
-export default App
+const mapStateToProps = state => {
+  return ({
+    challenges: state.challenges
+  })
+}
+// takes the state from the redux store and returns a challenges object
+
+export default connect(mapStateToProps, { fetchChallenges })(App);
