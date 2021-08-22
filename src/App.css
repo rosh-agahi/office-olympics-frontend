@@ -13,15 +13,27 @@
 
 .left {
   border: 1px solid black;
+  padding-left: 5px;
   width: 65%;
   overflow: scroll;
+  overflow-x: hidden;
+}
 
+::-webkit-scrollbar {
+    width: 6px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FBEEB9;
 }
 
 .allchallenges {
   border: 1px solid black;
+  padding-left: 5px;
   width: 33%;
-  overflow: scroll
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .challengeButtons {

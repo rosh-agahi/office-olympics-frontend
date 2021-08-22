@@ -2,6 +2,7 @@
 import React from 'react';
 // import {connect} from 'react-redux';
 import Header from './components/Header'
+import NewChallengeForm from './components/NewChallengeForm'
 import ThisChallenge from './components/ThisChallenge'
 import AllChallenges from './components/AllChallenges'
 
