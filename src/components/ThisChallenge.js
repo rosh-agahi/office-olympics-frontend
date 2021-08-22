@@ -1,7 +1,4 @@
 import React from 'react';
-import Submissions from './Submissions.js'
-// import '../header.css';
-// import '../App.css'
 
 class ThisChallenge extends React.Component {
 
@@ -14,10 +11,6 @@ class ThisChallenge extends React.Component {
         <div className="challengeButtons">
           <button>Close Challenge</button>
           <button>New Submission</button>
-        </div>
-        <div>
-          <h3>Submissions</h3>
-          <Submissions />
         </div>
       </div>
     )

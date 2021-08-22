@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header'
 import NewChallengeForm from './components/NewChallengeForm'
-import ThisChallenge from './components/ThisChallenge'
+import FocusChallenge from './containers/FocusChallenge'
 import AllChallenges from './containers/AllChallenges'
 
 
@@ -13,7 +13,7 @@ class App extends React.Component {
         <div className="head"><Header /></div>
         <div className="page">
           <div className="left">
-            <ThisChallenge />
+            <FocusChallenge />
           </div>
           <div className="allchallenges">
             <div className="newchallengeform"><NewChallengeForm /></div>
