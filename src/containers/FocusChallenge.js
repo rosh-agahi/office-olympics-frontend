@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import ThisChallenge from '../components/ThisChallenge'
 import Submissions from '../components/Submissions'
 
-const FocusChallenge = ({challenges}) => {
+const FocusChallenge = ({challenges, picked}) => {
   return (
     <div>
-      <ThisChallenge challenge={challenges[0]} />
+      <ThisChallenge />
       <Submissions />
     </div>
   )
@@ -14,7 +14,8 @@ const FocusChallenge = ({challenges}) => {
 
 const mapStateToProps = state => {
   return ({
-    challenges: state.challenges
+    challenges: state.challenges,
+    picked: 0
   })
 }
 
