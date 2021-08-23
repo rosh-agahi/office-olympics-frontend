@@ -15,28 +15,35 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <div className="head"><Header /></div>
-        <div className="page">
-          <div className="left">
-          </div>
-          <div className="allchallenges">
-            <div className="newchallengeform"><NewChallengeForm /></div>
-            <div><AllChallenges challenges={this.props.challenges} /></div>
+    if (this.props.challenges) {
+      return (
+        <div className="App">
+          <div className="head"><Header /></div>
+          <div className="page">
+            <div className="left">
+            </div>
+            <div className="allchallenges">
+              <div className="newchallengeform"><NewChallengeForm /></div>
+              <div><AllChallenges challenges={this.props.challenges} /></div>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      )
+  }
+
+    return (
+        <div className="head"><Header /></div>
+    )
+
   }
 }
 
 const mapStateToProps = state => {
   return ({
-    challenges: state.challenges,
+    challenges: state.challengeReducer.challenges,
     picked: 0
   })
 }
 // takes the state from the redux store and returns a challenges object
 
-export default connect(mapStateToProps, { fetchChallenges })(App);
+export default connect(mapStateToProps, { fetchChallenges,  })(App);
