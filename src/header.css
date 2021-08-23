@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+
 .header {
   display: flex;
   flex-direction: row;
@@ -9,6 +11,12 @@
   padding: 0px 20px;
   text-align: left;
   width: 75%;
+  line-height: 15px;
+}
+
+p.leftalign {
+  font-size: 30px;;
+  font-family: Allison;
 }
 
 img {
