@@ -1,13 +1,26 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-const ChallengeListCard = ({challenge}) => {
+
+const ChallengeListCard = ({challenge, }) => {
 
     return (
       <div className="challengelistitem">
-        <a href="www.google.com">{challenge.name}</a>
+        <button
+          id={challenge.id}
+          className="challengelistitem"
+          onClick={()=> console.log(challenge.id)}>
+            {challenge.name}
+          </button>
       </div>
     )
 
 }
 
-export default ChallengeListCard;
+const mapStateToProps = state => {
+  return ({
+    challenges: state.challenges
+  })
+}
+
+export default connect(mapStateToProps, {  })(ChallengeListCard);
