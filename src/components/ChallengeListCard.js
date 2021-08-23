@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {openChallenge} from '../actions/openChallenge'
 
 
 const ChallengeListCard = ({challenge, }) => {
@@ -9,7 +10,7 @@ const ChallengeListCard = ({challenge, }) => {
         <button
           id={challenge.id}
           className="challengelistitem"
-          onClick={()=> console.log(challenge.id)}>
+          onClick={()=> openChallenge(challenge)}>
             {challenge.name}
           </button>
       </div>
