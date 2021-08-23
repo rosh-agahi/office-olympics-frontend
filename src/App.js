@@ -20,7 +20,6 @@ class App extends React.Component {
         <div className="head"><Header /></div>
         <div className="page">
           <div className="left">
-            <FocusChallenge />
           </div>
           <div className="allchallenges">
             <div className="newchallengeform"><NewChallengeForm /></div>
@@ -34,7 +33,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    challenges: state.challenges
+    challenges: state.challenges,
+    picked: 0
   })
 }
 // takes the state from the redux store and returns a challenges object
