@@ -75,3 +75,8 @@
 .challengelistitem:hover {
   background-color: #FBEEB9;
 }
+
+.ptext {
+  font-family: sans-serif;
+  font-size: 13px;
+}
