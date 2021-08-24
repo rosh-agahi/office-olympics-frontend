@@ -1,4 +1,5 @@
 import React from 'react';
+import Submissions from './Submissions'
 
 const ThisChallenge = ({ challenge }) => {
     return (
@@ -10,6 +11,10 @@ const ThisChallenge = ({ challenge }) => {
       <p>{challenge.rules}</p>
       <div className="challengeButtons">
         <button>New Submission</button>
+      </div>
+      <div>
+      //submissions
+      <Submissions submissions={challenge.submissions} />
       </div>
     </div>
   )
