@@ -8,14 +8,28 @@ class FocusChallenge extends React.Component {
 
   render() {
 
-    if (this.props.p != 0) {
+    const style = {
+      display: "flex",
+      height: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column"
+    }
+
+    if (this.props.pick !== 0) {
       return (
         <div>
           <ThisChallenge challenge={this.props.challenge}/>
-          <Submissions />
         </div>
       )
     }
+    return (
+      <div style={style}>
+        <p>Add a New Challenge or select one from the list to begin.</p>
+        <p>Good luck, contenders!</p>
+      </div>
+    )
+
   }
 
 }
@@ -23,7 +37,7 @@ class FocusChallenge extends React.Component {
 const mapStateToProps = state => {
   const p = state.pickReducer.pick;
 
-  if (p != 0) {
+  if (p !== 0) {
     return ({
       challenge: state.challengeReducer.challenges.filter(c=>c.id === parseInt(state.pickReducer.pick))
     })
