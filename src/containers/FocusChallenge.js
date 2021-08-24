@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import {pickChallengeSuccess} from '../actions/selectChallengePick'
+// import {pickChallenge} from '../actions/selectChallengePick'
 import ThisChallenge from '../components/ThisChallenge'
-import Submissions from '../components/Submissions'
 
 class FocusChallenge extends React.Component {
 
@@ -39,7 +38,7 @@ const mapStateToProps = state => {
 
   if (p !== 0) {
     return ({
-      challenge: state.challengeReducer.challenges.filter(c=>c.id === parseInt(state.pickReducer.pick))
+      challenge: state.challengeReducer.challenges.filter(c=>c.id === state.pickReducer.pick)[0]
     })
   }
   return ({

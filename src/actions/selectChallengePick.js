@@ -1,6 +1,8 @@
 //action
 
-export const pickChallengeSuccess = (pick) => ({
-  type: 'PICKED_CHALLENGE',
-  payload: pick
-});
+export const pickChallenge = pick => {
+  return {
+   type: 'CHANGE_PICKED',
+   payload: pick
+  }
+}

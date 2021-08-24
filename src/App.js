@@ -21,6 +21,7 @@ class App extends React.Component {
           <div className="head"><Header /></div>
           <div className="page">
             <div className="left">
+              <FocusChallenge />
             </div>
             <div className="allchallenges">
               <div className="newchallengeform"><NewChallengeForm /></div>

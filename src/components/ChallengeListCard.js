@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {openChallenge} from '../actions/openChallenge'
+import { pickChallenge } from '../actions/selectChallengePick'
 
 
-const ChallengeListCard = ({challenge, }) => {
+const ChallengeListCard = ({challenge, pickChallenge}) => {
 
     return (
       <div className="challengelistitem">
         <button
           id={challenge.id}
           className="challengelistitem"
-          onClick={()=> openChallenge(challenge)}>
+          onClick={()=> pickChallenge(challenge.id)}>
             {challenge.name}
           </button>
       </div>
@@ -24,4 +24,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, {  })(ChallengeListCard);
+export default connect(mapStateToProps, { pickChallenge })(ChallengeListCard);

@@ -13,8 +13,7 @@ const ThisChallenge = ({ challenge }) => {
         <button>New Submission</button>
       </div>
       <div>
-      //submissions
-      <Submissions submissions={challenge.submissions} />
+        <Submissions submissions={challenge.submissions} />
       </div>
     </div>
   )

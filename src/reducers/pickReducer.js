@@ -5,7 +5,7 @@ const pickReducerDefaultState = {
 export default function pickReducer(state = pickReducerDefaultState, action) {
   switch (action.type) {
     case 'CHANGE_PICKED':
-      return action.payload;
+      return {pick: action.payload};
     default:
       return state;
   }
