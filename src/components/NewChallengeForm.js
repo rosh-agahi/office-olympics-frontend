@@ -1,5 +1,6 @@
 import React from 'react'
 import '../forms.css'
+import {connect} from 'react-redux'
 import {submitChallenge} from '../actions/challengeForm'
 
 class NewChallengeForm extends React.Component {
@@ -22,6 +23,11 @@ class NewChallengeForm extends React.Component {
           [name]: value
         }
       })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.submitChallenge(this.state)
   }
 
   render() {
@@ -63,8 +69,6 @@ class NewChallengeForm extends React.Component {
     )
   }
 
-
-
 }
 
-export default NewChallengeForm
+export default connect(null, {submitChallenge})(NewChallengeForm)
