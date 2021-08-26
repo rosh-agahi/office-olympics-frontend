@@ -1,5 +1,6 @@
 import React from 'react'
 import '../forms.css'
+import {submitChallenge} from '../actions/challengeForm'
 
 class NewChallengeForm extends React.Component {
   constructor(){
@@ -13,11 +14,21 @@ class NewChallengeForm extends React.Component {
     }
   }
 
+  handleChange = (e) => {
+      const { name, value } = e.target
+      this.setState({
+        formInput: {
+          ...this.state.formInput,
+          [name]: value
+        }
+      })
+  }
+
   render() {
     return (
       <div className="newChallenge">
         <h2>Add a New Challenge</h2>
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
+          <form autoComplete="off" onSubmit={this.submitChallenge}>
             <input
               name="name"
               type="text"
@@ -41,6 +52,7 @@ class NewChallengeForm extends React.Component {
               value={this.state.formInput.rules}
               onChange={this.handleChange}
             />
+
             <input
               type="submit"
               value="Post Challenge"
@@ -51,29 +63,6 @@ class NewChallengeForm extends React.Component {
     )
   }
 
-  handleChange = (e) => {
-      const { name, value } = e.target
-      this.setState({
-        formInput: {
-          ...this.state.formInput,
-          [name]: value
-        }
-      })
-    }
-
-    handleSubmit = (e) => {
-      e.preventDefault()
-      const headers = {
-        method: "POST",
-        headers: {
-          "Content-Type": 'application/json'
-        },
-        body: JSON.stringify(this.state.formInput)
-      }
-
-      fetch("http://127.0.0.1:3000/api/v1/challenges", headers)
-        .then(r => r.json())
-    }
 
 
 }
