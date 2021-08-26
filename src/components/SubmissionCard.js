@@ -1,26 +1,30 @@
 import React from 'react';
-// import '../header.css';
-// import '../App.css'
+import {connect} from 'react-redux';
 
-class SubmissionCard extends React.Component {
+const SubmissionCard = ({submission}) => {
 
-  render() {
     return (
       <div className="submissioncard">
-        <h2>Submission Card</h2>
-        <p>Name, Submission photos....</p>
-        <button className="vote">Vote</button>
-        <p>Vote Tally: 15</p>
+        <div className="submissionInfo">
+          <h4>Name:</h4>
+            <p>{submission.name}</p>
+          <h4>Submission Info:</h4>
+            <p>{submission.text}</p>
+        </div>
+
+        <div className="vote">
+        <button
+          id={submission.id}
+          // onClick{()=> console.log(submission.id)}
+          >
+          UpVote!
+        </button>
+        <p>Vote Tally: <strong>{submission.votes}</strong></p>
+        </div>
+
       </div>
     )
-  }
 
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     challenges: []
-  //   }
-  // }
 }
 
 export default SubmissionCard;
