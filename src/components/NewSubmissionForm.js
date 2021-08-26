@@ -2,6 +2,8 @@ import React from 'react'
 import '../forms.css'
 import {connect} from 'react-redux'
 import {newSubmission} from '../actions/submission'
+import {Route, Link, useHistory} from 'react-router-dom'
+
 
 class NewSubmissionForm extends React.Component {
 
@@ -23,13 +25,8 @@ class NewSubmissionForm extends React.Component {
     e.preventDefault()
     console.log(this.state)
     this.props.newSubmission(this.state)
-    // this.setState({
-    //   name: "",
-    //   text: "",
-    //   rules: "",
-    //   votes: 0,
-    //   challenge_id: this.props.challenge
-    // })
+    // redirects to close submission form
+    this.props.history.goBack()
   }
 
   render() {
