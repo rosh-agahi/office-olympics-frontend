@@ -12,7 +12,7 @@ const ThisChallenge = ({ challenge }) => {
       <p className="ptext">{challenge.rules}</p>
 
       <div>
-        <NewSubmissionForm />
+        <NewSubmissionForm challenge={challenge.id}/>
       </div>
 
       <div>

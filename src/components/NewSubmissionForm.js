@@ -10,7 +10,7 @@ class NewSubmissionForm extends React.Component {
       text: "",
       videourl: "",
       votes: 0,
-      challenge_id: ""
+      challenge_id: this.props.challenge
       }
 
   handleChange = (e) => {
@@ -27,7 +27,8 @@ class NewSubmissionForm extends React.Component {
       name: "",
       text: "",
       rules: "",
-      votes: 0
+      votes: 0,
+      challenge_id: this.props.challenge
     })
   }
 
@@ -63,6 +64,18 @@ class NewSubmissionForm extends React.Component {
               placeholder="Paste your Youtube Embed URL"
               value={this.state.videourl}
               onChange={this.handleChange}
+            />
+
+            <input
+              name="challenge_id"
+              type="hidden"
+              value={this.state.challenge_id}
+            />
+
+            <input 
+              name="votes"
+              type="hidden"
+              value={this.state.votes}
             />
 
             <input
