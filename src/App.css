@@ -44,9 +44,35 @@
 
 .submissioncard {
   background-color: aliceblue;
-  padding: 5px;
+  padding: 20px;
   margin: 20px;
   border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.submissionleft {
+  text-align: left;
+  width: 40%;
+}
+
+.submissionleft p {
+    font-family: sans-serif;
+    font-size: 13px;
+    margin: 5px 0 20px 0
+}
+
+.submissionleft h4 {
+  margin: 0
+}
+
+.votetally {
+  font-size: 16px;
+  height: 25%;
+}
+
+.vote {
+  width: 30%
 }
 
 .list {

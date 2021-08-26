@@ -5,21 +5,30 @@ const SubmissionCard = ({submission}) => {
 
     return (
       <div className="submissioncard">
-        <div className="submissionInfo">
+        <div className="submissionleft">
           <h4>Name:</h4>
             <p>{submission.name}</p>
           <h4>Submission Info:</h4>
             <p>{submission.text}</p>
         </div>
 
+        <div className="submissionmid">
+          <iframe width="210" height="150"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+          </iframe>
+        </div>
+
         <div className="vote">
-        <button
-          id={submission.id}
-          // onClick{()=> console.log(submission.id)}
-          >
-          UpVote!
-        </button>
-        <p>Vote Tally: <strong>{submission.votes}</strong></p>
+
+          <p className="votetally">Vote Tally: <br />
+            <strong>{submission.votes}</strong></p>
+
+          <button
+            id={submission.id}
+            onClick={() => console.log(submission.id)}
+            >
+            UpVote!
+          </button>
         </div>
 
       </div>
