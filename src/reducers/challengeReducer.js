@@ -6,6 +6,11 @@ export default function challengeReducer(state = {challenges: []}, action) {
   switch (action.type) {
     case 'FETCH_CHALLENGES':
       return {challenges: action.payload}
+    case 'SUBMIT_CHALLENGE':
+      return {
+        ...state,
+        challenges: [...state.challenges, action.payload]}
+        // this saves the app from making an unnecessary fetch request, just adds the most recent challenge to the state without fetching.
     default:
       return state
   }
