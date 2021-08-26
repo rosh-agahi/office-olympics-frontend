@@ -4,42 +4,35 @@ import {connect} from 'react-redux'
 import {submitChallenge} from '../actions/challengeForm'
 
 class NewChallengeForm extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      formInput: {
-        name: "",
-        description: "",
-        rules: "",
+
+    state = {
+      name: "",
+      description: "",
+      rules: "",
       }
-    }
-  }
 
   handleChange = (e) => {
-      const { name, value } = e.target
       this.setState({
-        formInput: {
-          ...this.state.formInput,
-          [name]: value
-        }
+        [e.target.name]: e.target.value
       })
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.submitChallenge(this.state)
+    console.log(this.state)
+    // this.props.submitChallenge(this.state)
   }
 
   render() {
     return (
       <div className="newChallenge">
         <h2>Add a New Challenge</h2>
-          <form autoComplete="off" onSubmit={this.submitChallenge}>
+          <form autoComplete="off" onSubmit={this.handleSubmit}>
             <input
               name="name"
               type="text"
               placeholder="Name"
-              value={this.state.formInput.name}
+              value={this.state.name}
               onChange={this.handleChange}
             />
 
@@ -47,7 +40,7 @@ class NewChallengeForm extends React.Component {
               name="description"
               type="textarea"
               placeholder="Description"
-              value={this.state.formInput.description}
+              value={this.state.description}
               onChange={this.handleChange}
             />
 
@@ -55,7 +48,7 @@ class NewChallengeForm extends React.Component {
               name="rules"
               type="textarea"
               placeholder="Rules"
-              value={this.state.formInput.rules}
+              value={this.state.rules}
               onChange={this.handleChange}
             />
 
