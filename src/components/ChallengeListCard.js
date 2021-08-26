@@ -2,17 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { pickChallenge } from '../actions/selectChallengePick'
 
+import {Route, Link} from 'react-router-dom'
+
 
 const ChallengeListCard = ({challenge, pickChallenge}) => {
 
     return (
       <div className="challengelistitem">
-        <button
+        <Link to={`/challenges/${challenge.id}`}
           id={challenge.id}
-          className="challengelistitem"
-          onClick={()=> pickChallenge(challenge.id)}>
+          className="challengelistitem">
             {challenge.name}
-          </button>
+          </Link>
       </div>
     )
 
