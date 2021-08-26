@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Office Olympics is an an designed with working from home in mind. Right when we think we might be going back to the office, Covid has thrown us one curveball after the next and we have had to become increasingly creative in how we keep ourselves busy and our moral up when all we do is stare at spreadsheets all day without a healthy dose of human interaction to break up the day. Something we have started doing at work is putting on challenges for our employees to get us to interact with one another outside the frequent and phlegmatic zoom meetings. But organizing these challenges has proven... well, challenging.
+Office Olympics is app an designed with working from home in mind. Right when we think we might be going back to the office, Covid has thrown us one curveball after the next and we have had to become increasingly creative in how we keep ourselves busy and our moral up when all we do is stare at spreadsheets all day without a healthy dose of human interaction to break up the day. Something we have started doing at work is putting on challenges for our employees to get us to interact with one another outside the frequent and phlegmatic zoom meetings. But organizing these challenges has proven... well, challenging.
 
 This react app allows users to create challenges with a name, description and rules. Users can also select challenges to participate in by making submissions and voting for their favorites. No more threads in disparate slack channels and inconsistent voting practices. Office Olympics takes care of all the details so employees can focus on having fun and participating.
 
