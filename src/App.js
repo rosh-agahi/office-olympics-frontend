@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from './components/Header'
 import NewChallengeForm from './components/NewChallengeForm'
+import Welcome from './components/Welcome'
 import FocusChallenge from './containers/FocusChallenge'
 import AllChallenges from './containers/AllChallenges'
+import {Route, Switch} from 'react-router-dom'
 
 import {connect} from 'react-redux';
 import {fetchChallenges} from './actions/fetchChallenges'
@@ -21,6 +23,7 @@ class App extends React.Component {
           <div className="head"><Header /></div>
           <div className="page">
             <div className="left">
+              <Route exact path='/home' component={Welcome}/>
               <FocusChallenge />
             </div>
             <div className="allchallenges">

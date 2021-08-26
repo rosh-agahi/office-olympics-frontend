@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 // import {pickChallenge} from '../actions/selectChallengePick'
 import ThisChallenge from '../components/ThisChallenge'
+import {Route, Switch} from 'react-router-dom'
 
 class FocusChallenge extends React.Component {
 
@@ -15,20 +16,12 @@ class FocusChallenge extends React.Component {
       flexDirection: "column"
     }
 
-    if (this.props.pick !== 0) {
+    
       return (
         <div>
-          <ThisChallenge challenge={this.props.challenge}/>
+          <Route path='/challenges/:id' render={(routerProps) => <ThisChallenge {...routerProps} challenge={this.props.challenge}/>} />
         </div>
       )
-    }
-    return (
-      <div style={style}>
-        <p>Add a New Challenge or select one from the list to begin.</p>
-        <p>Good luck, contenders!</p>
-      </div>
-    )
-
   }
 
 }
