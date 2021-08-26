@@ -1,13 +1,11 @@
 import React from 'react';
 import SubmissionCard from './SubmissionCard'
 
-const Submissions = ({submissions, }) => {
+const Submissions = ({submissions}) => {
     return (
       <div>
-        <span>Submissions: </span>
-        <SubmissionCard />
-        <SubmissionCard />
 
+        {submissions.map(s => <SubmissionCard key={s.id} submission={s}/>)}
 
       </div>
     )
