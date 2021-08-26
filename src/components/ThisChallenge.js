@@ -2,8 +2,13 @@ import React from 'react';
 import Submissions from './Submissions'
 import NewSubmissionForm from './NewSubmissionForm'
 
-const ThisChallenge = ({ challenge }) => {
-    return (
+const ThisChallenge = (props) => {
+
+  let challenge = props.challenges[props.match.params.id - 1]
+
+  // console.log(props.challenges[props.match.params.id - 1])
+
+  return (
     <div>
       <h2>{challenge.name}</h2>
       <p><strong>Description</strong></p>

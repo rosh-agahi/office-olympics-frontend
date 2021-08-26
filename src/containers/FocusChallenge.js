@@ -1,25 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 // import {pickChallenge} from '../actions/selectChallengePick'
+import {fetchChallenges} from '../actions/fetchChallenges'
 import ThisChallenge from '../components/ThisChallenge'
 import {Route, Switch} from 'react-router-dom'
 
 class FocusChallenge extends React.Component {
 
   render() {
-
-    const style = {
-      display: "flex",
-      height: "100%",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column"
-    }
-
-    
       return (
         <div>
-          <Route path='/challenges/:id' render={(routerProps) => <ThisChallenge {...routerProps} challenge={this.props.challenge}/>} />
+          <Route path='/challenges/:id' render={(routerProps) => <ThisChallenge {...routerProps} challenges={this.props.challenge}/>} />
         </div>
       )
   }
@@ -27,17 +18,9 @@ class FocusChallenge extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const p = state.pickReducer.pick;
-
-  if (p !== 0) {
     return ({
-      challenge: state.challengeReducer.challenges.filter(c=>c.id === state.pickReducer.pick)[0]
+      challenge: state.challengeReducer.challenges
     })
   }
-  return ({
-    pick: p
-  })
 
-}
-
-export default connect(mapStateToProps, { })(FocusChallenge)
+export default connect(mapStateToProps, { fetchChallenges })(FocusChallenge)

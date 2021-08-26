@@ -23,8 +23,8 @@ class App extends React.Component {
           <div className="head"><Header /></div>
           <div className="page">
             <div className="left">
-              <Route exact path='/home' component={Welcome}/>
-              <FocusChallenge />
+              <Route exact path='/challenges' component={Welcome}/>
+              <Route path='/challenges/:id' render={(routerProps) => <FocusChallenge {...routerProps} challeneges={this.props.challenges} />} />
             </div>
             <div className="allchallenges">
               <div className="newchallengeform"><NewChallengeForm /></div>
