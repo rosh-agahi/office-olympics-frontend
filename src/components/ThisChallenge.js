@@ -5,9 +5,9 @@ const ThisChallenge = ({ challenge }) => {
     return (
     <div>
       <h2>{challenge.name}</h2>
-      <p>----------------------Description----------------------</p>
+      <p><strong>Description</strong></p>
       <p className="ptext">{challenge.description}</p>
-      <p>-------------------Rules of the Road-------------------</p>
+      <p><strong>Rules of the Road</strong></p>
       <p className="ptext">{challenge.rules}</p>
       <div className="challengeButtons">
         <button>New Submission</button>
