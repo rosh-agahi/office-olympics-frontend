@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { pickChallenge } from '../actions/selectChallengePick'
 
 import {Route, Link} from 'react-router-dom'
 
 
-const ChallengeListCard = ({challenge, pickChallenge}) => {
+const ChallengeListCard = ({challenge}) => {
 
     return (
       <div className="challengelistitem">
@@ -25,4 +24,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { pickChallenge })(ChallengeListCard);
+export default connect(mapStateToProps)(ChallengeListCard);
