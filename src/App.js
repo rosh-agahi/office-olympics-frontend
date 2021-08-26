@@ -4,7 +4,7 @@ import NewChallengeForm from './components/NewChallengeForm'
 import Welcome from './components/Welcome'
 import FocusChallenge from './containers/FocusChallenge'
 import AllChallenges from './containers/AllChallenges'
-import {Route, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
 import {connect} from 'react-redux';
 import {fetchChallenges} from './actions/fetchChallenges'
@@ -23,7 +23,7 @@ class App extends React.Component {
           <div className="head"><Header /></div>
           <div className="page">
             <div className="left">
-              <Route exact path='/challenges' component={Welcome}/>
+              <Route exact path='/' component={Welcome}/>
               <Route path='/challenges/:id' render={(routerProps) => <FocusChallenge {...routerProps} challeneges={this.props.challenges} />} />
             </div>
             <div className="allchallenges">
@@ -44,9 +44,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    challenges: state.challengeReducer.challenges,
-    picked: 0
-  })
+    challenges: state.challengeReducer.challenges
+    })
 }
 // takes the state from the redux store and returns a challenges object
 

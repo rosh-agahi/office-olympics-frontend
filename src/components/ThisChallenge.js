@@ -1,6 +1,8 @@
 import React from 'react';
 import Submissions from './Submissions'
 import NewSubmissionForm from './NewSubmissionForm'
+import NewSubmissionButton from './NewSubmissionButton'
+import {Route, Link} from 'react-router-dom'
 
 const ThisChallenge = (props) => {
 
@@ -17,7 +19,8 @@ const ThisChallenge = (props) => {
       <p className="ptext">{challenge.rules}</p>
 
       <div>
-        <NewSubmissionForm challenge={challenge.id}/>
+        <Route exact path={`/challenges/${challenge.id}`} render={() => <NewSubmissionButton challenge={challenge} />} />
+        <Route path={`/challenges/${challenge.id}/submissions/new`} render={(routerProps) => <NewSubmissionForm {...routerProps} challenge={challenge.id}/>} />
       </div>
 
       <div>
