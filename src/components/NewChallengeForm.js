@@ -19,8 +19,8 @@ class NewChallengeForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
-    // this.props.submitChallenge(this.state)
+    // console.log(this.state)
+    this.props.submitChallenge(this.state)
   }
 
   render() {
