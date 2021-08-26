@@ -22,7 +22,7 @@ class NewSubmissionForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     console.log(this.state)
-    // this.props.submitChallenge(this.state)
+    this.props.newSubmission(this.state)
     // this.setState({
     //   name: "",
     //   text: "",
@@ -90,5 +90,5 @@ class NewSubmissionForm extends React.Component {
 
 }
 
-//export default connect(null, {submitChallenge})(NewSubmissionForm)
-export default NewSubmissionForm
+export default connect(null, {newSubmission})(NewSubmissionForm)
+// export default NewSubmissionForm
