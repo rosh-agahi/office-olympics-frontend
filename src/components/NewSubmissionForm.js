@@ -1,7 +1,7 @@
 import React from 'react'
 import '../forms.css'
 import {connect} from 'react-redux'
-//import {submitChallenge} from '../actions/challengeForm'
+import {newSubmission} from '../actions/submission'
 
 class NewSubmissionForm extends React.Component {
 
@@ -23,13 +23,13 @@ class NewSubmissionForm extends React.Component {
     e.preventDefault()
     console.log(this.state)
     // this.props.submitChallenge(this.state)
-    this.setState({
-      name: "",
-      text: "",
-      rules: "",
-      votes: 0,
-      challenge_id: this.props.challenge
-    })
+    // this.setState({
+    //   name: "",
+    //   text: "",
+    //   rules: "",
+    //   votes: 0,
+    //   challenge_id: this.props.challenge
+    // })
   }
 
   render() {
@@ -72,7 +72,7 @@ class NewSubmissionForm extends React.Component {
               value={this.state.challenge_id}
             />
 
-            <input 
+            <input
               name="votes"
               type="hidden"
               value={this.state.votes}
