@@ -6,14 +6,18 @@ import {upVote} from '../actions/upvote'
 class Vote extends React.Component {
 
   state = {
-    votes: this.props.submission.votes +1,
+    votes: this.props.submission.votes + 1,
     submission_id: this.props.submission.id
   }
 
   handleVote = (e) => {
     e.preventDefault()
-    // console.log(this.state)
+    console.log(this.state)
     this.props.upVote(this.state, this.props.submission.id)
+    this.setState({
+      votes: this.props.submission.votes + 1,
+      submission_id: this.props.submission.id
+    })
   }
 
   render() {
