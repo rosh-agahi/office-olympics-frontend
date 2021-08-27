@@ -1,20 +1,32 @@
 import React from 'react'
 
 
-const Vote = ({submission}) => {
-  return (
-    <div>
-      <p className="votetally">Votes: <br />
-        <strong>{submission.votes}</strong></p>
+class Vote extends React.Component {
 
-      <button
-        id={submission.id}
-        onClick={() => console.log(submission.id)}
-        >
-        UpVote!
-      </button>
+  handleVote = (e) => {
+
+  }
+
+  render() {
+    return (
+      <div>
+        <p className="votetally">Votes: <br />
+          <strong>{this.props.submission.votes}</strong></p>
+
+        <form>
+          <input
+            type="text"
+            name="votes"
+            value={this.props.submission.votes + 1}
+          />
+
+          <input
+            type="submit"
+            value="UpVote"/>
+        </form>
+
       </div>
-  )
+  )}
 }
 
 export default Vote
