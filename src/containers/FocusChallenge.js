@@ -3,24 +3,29 @@ import {connect} from 'react-redux';
 // import {pickChallenge} from '../actions/selectChallengePick'
 import {fetchChallenges} from '../actions/fetchChallenges'
 import ThisChallenge from '../components/ThisChallenge'
-import {Route} from 'react-router-dom'
+import {Route, Redirect} from 'react-router-dom'
 
 class FocusChallenge extends React.Component {
 
   render() {
-      return (
-        <div>
-          <Route path='/challenges/:id' render={(routerProps) => <ThisChallenge {...routerProps} challenges={this.props.challenge}/>} />
-        </div>
-      )
+    if (this.props.challenges.length !== 0) {
+    return (
+      <div>
+        <Route path='/challenges/:id' render={(routerProps) =>
+           <ThisChallenge {...routerProps} challenges={this.props.challenges}/>}
+          />
+      </div>
+    )} else {
+      return (<Redirect to="/" />) 
+    }
   }
 
 }
 
 const mapStateToProps = state => {
     return ({
-      challenge: state.challengeReducer.challenges
+      challenges: state.challengeReducer.challenges
     })
   }
 
-export default connect(mapStateToProps, { fetchChallenges })(FocusChallenge)
+export default connect(mapStateToProps)(FocusChallenge)
