@@ -13,7 +13,10 @@ class Vote extends React.Component {
         <p className="votetally">Votes: <br />
           <strong>{this.props.submission.votes}</strong></p>
 
-        <form>
+        <form
+          onSubmit={this.handleVote}
+        >
+
           <input
             type="text"
             name="votes"
