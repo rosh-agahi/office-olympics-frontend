@@ -24,7 +24,7 @@ class NewSubmissionForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     console.log(this.state)
-    this.props.newSubmission(this.state)
+    this.props.newSubmission(this.state, this.props.challenge)
     // redirects to close submission form
     this.props.history.goBack()
   }

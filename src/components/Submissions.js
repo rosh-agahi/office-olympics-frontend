@@ -1,5 +1,6 @@
 import React from 'react';
 import SubmissionCard from './SubmissionCard'
+import {connect} from 'react-redux';
 
 const Submissions = ({submissions}) => {
   if (submissions.length === 0) {
@@ -12,7 +13,12 @@ const Submissions = ({submissions}) => {
         {submissions.map(s => <SubmissionCard key={s.id} submission={s}/>)}
       </div>
     )
-
 }
 
-export default Submissions;
+const mapStateToProps = state => {
+  return ({
+    challenges: state.challengeReducer.challenges
+  })
+}
+
+export default connect(mapStateToProps)(Submissions)
