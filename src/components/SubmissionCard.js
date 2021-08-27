@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import Vote from './Vote'
 
 const SubmissionCard = ({submission}) => {
 
@@ -19,16 +19,7 @@ const SubmissionCard = ({submission}) => {
         </div>
 
         <div className="vote">
-
-          <p className="votetally">Vote Tally: <br />
-            <strong>{submission.votes}</strong></p>
-
-          <button
-            id={submission.id}
-            onClick={() => console.log(submission.id)}
-            >
-            UpVote!
-          </button>
+          <Vote submission={submission} />
         </div>
 
       </div>

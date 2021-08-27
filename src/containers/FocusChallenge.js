@@ -1,7 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import {pickChallenge} from '../actions/selectChallengePick'
-import {fetchChallenges} from '../actions/fetchChallenges'
 import ThisChallenge from '../components/ThisChallenge'
 import {Route, Redirect} from 'react-router-dom'
 
@@ -16,7 +14,7 @@ class FocusChallenge extends React.Component {
           />
       </div>
     )} else {
-      return (<Redirect to="/" />) 
+      return (<Redirect to="/" />)
     }
   }
 

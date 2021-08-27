@@ -12,14 +12,14 @@ export default function challengeReducer(state = {challenges: []}, action) {
         challenges: [...state.challenges, action.payload]}
         // this saves the app from making an unnecessary fetch request, just adds the most recent challenge to the state without fetching.
     case 'ADD_SUBMISSION':
-      let challenges = state.challenges.map(c => {
+      let challenge = state.challenges.map(c => {
        if (c.id === action.payload.id) {
          return action.payload
        } else {
          return c
        }
      })
-      return {...state, challenges: challenges}
+      return {...state, challenges: challenge}
     default:
       return state
   }
