@@ -1,10 +1,19 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {upVote} from '../actions/upvote'
 
 
 class Vote extends React.Component {
 
-  handleVote = (e) => {
+  state = {
+    votes: this.props.submission.votes +1,
+    submission_id: this.props.submission.id
+  }
 
+  handleVote = (e) => {
+    e.preventDefault()
+    // console.log(this.state)
+    this.props.upVote(this.state, this.props.submission.id)
   }
 
   render() {
@@ -16,13 +25,6 @@ class Vote extends React.Component {
         <form
           onSubmit={this.handleVote}
         >
-
-          <input
-            type="text"
-            name="votes"
-            value={this.props.submission.votes + 1}
-          />
-
           <input
             type="submit"
             value="UpVote"/>
@@ -32,4 +34,4 @@ class Vote extends React.Component {
   )}
 }
 
-export default Vote
+export default connect(null, {upVote})(Vote)

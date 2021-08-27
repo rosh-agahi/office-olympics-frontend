@@ -20,6 +20,15 @@ export default function challengeReducer(state = {challenges: []}, action) {
        }
      })
       return {...state, challenges: challenge}
+    case 'UPVOTE':
+    let voted = state.challenges.map(c => {
+     if (c.id === action.payload.id) {
+       return action.payload
+     } else {
+       return c
+     }
+   })
+    return {...state, challenges: voted}
     default:
       return state
   }
